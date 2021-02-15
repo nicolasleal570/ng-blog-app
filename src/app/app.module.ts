@@ -10,6 +10,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { PostsPageComponent } from './pages/posts-page/posts-page.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostCardComponent } from './components/post-card/post-card.component';
+import { SelectedPostComponent } from './pages/selected-post/selected-post.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PostCardComponent } from './components/post-card/post-card.component';
     PostsPageComponent,
     PostListComponent,
     PostCardComponent,
+    SelectedPostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

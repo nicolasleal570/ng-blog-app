@@ -1,5 +1,15 @@
 @import "../../styles/variables.scss";
 
+.btn-create-post {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 45px;
+  background-color: $dark;
+  padding: 13px 30px;
+  border-radius: 5px;
+}
+
 .post-list {
   padding: 100px 0;
 
