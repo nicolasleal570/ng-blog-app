@@ -1,0 +1,11 @@
+@import "../../styles/variables.scss";
+
+.post-list {
+  padding: 100px 0;
+
+  .list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+}

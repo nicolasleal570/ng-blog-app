@@ -1,7 +1,19 @@
-<section class="header" id="headerContainer">
-  <!-- Menu -->
-  <app-navbar></app-navbar>
+<section
+  class="header"
+  id="headerContainer"
+  [ngClass]="{ 'is-small': isSmall }"
+>
+  <!-- Este div es para separar el welcome-message del navbar -->
+  <div class="navbar-divider"></div>
 
   <!-- Welcome message -->
-  <app-header-message></app-header-message>
+  <div class="welcome">
+    <h1 *ngIf="title !== ''">{{ title }}</h1>
+
+    <p *ngIf="description !== ''">{{ description }}</p>
+
+    <div class="input-box" *ngIf="withSearchbar">
+      <app-search-bar></app-search-bar>
+    </div>
+  </div>
 </section>

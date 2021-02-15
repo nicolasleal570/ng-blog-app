@@ -6,6 +6,7 @@ import { PostsPageComponent } from './pages/posts-page/posts-page.component';
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'posts', component: PostsPageComponent },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
