@@ -16,6 +16,8 @@ export class PostListComponent implements OnInit {
   }
 
   getAllPosts(): void {
-    this.posts = this.postsService.getAllPosts();
+    this.postsService.getAllPosts().subscribe((posts) => {
+      this.posts = posts;
+    });
   }
 }

@@ -7,7 +7,7 @@ import { SelectedPostComponent } from './pages/selected-post/selected-post.compo
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'posts', component: PostsPageComponent },
-  // { path: 'posts/create', pathMatch: 'full', component: PostsPageComponent },
+  { path: 'posts/create', pathMatch: 'full', component: PostsPageComponent },
   { path: 'posts/:postId', component: SelectedPostComponent },
   { path: '**', redirectTo: '/' },
 ];

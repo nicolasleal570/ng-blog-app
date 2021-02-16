@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Post } from '../models/post';
 
 @Injectable({
@@ -61,11 +64,21 @@ export class PostsService {
         'https://images.unsplash.com/photo-1472437774355-71ab6752b434?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80',
     },
   ];
+  private postsDB: AngularFireList<Post>;
 
-  constructor() {}
+  constructor(private db: AngularFireDatabase) {
+    this.postsDB = this.db.list('/posts');
+  }
 
-  getAllPosts(): Array<Post> {
-    return this.posts;
+  getAllPosts(): Observable<Post[]> {
+    return this.postsDB.snapshotChanges().pipe(
+      map((changes) => {
+        return changes.map((post) => ({
+          id: post.payload.key,
+          ...post.payload.val(),
+        }));
+      })
+    );
   }
 
   getPostById(id: string): Post {

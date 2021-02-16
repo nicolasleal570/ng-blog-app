@@ -1,12 +1,11 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: 'AIzaSyCyV5g_6QoK0xigz-tBnrDlPGszzWB4zsc',
-    authDomain: 'ng-blog-app-9f28d.firebaseapp.com',
-    projectId: 'ng-blog-app-9f28d',
-    storageBucket: 'ng-blog-app-9f28d.appspot.com',
-    messagingSenderId: '80466454596',
-    appId: '1:80466454596:web:6f443264a4b6bed78d7411',
-    measurementId: 'G-PCC2Q8WS9W',
+    apiKey: 'AIzaSyCVapI1kRKwf0QfyDsdD2gKaN1j4oJ3pwM',
+    authDomain: 'ng-test-2b2bb.firebaseapp.com',
+    projectId: 'ng-test-2b2bb',
+    storageBucket: 'ng-test-2b2bb.appspot.com',
+    messagingSenderId: '1074842257843',
+    appId: '1:1074842257843:web:ba741fb7ebe387e37fe3c6',
   },
 };
