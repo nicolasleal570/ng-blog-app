@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../../styles/variables.scss";
 
 .header {
   width: 100%;
@@ -30,6 +30,10 @@
       font-weight: 900;
       color: #fff;
       text-align: center;
+
+      &.margin-botton {
+        margin-bottom: 45px;
+      }
 
       span {
         color: $dark;

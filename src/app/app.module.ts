@@ -13,9 +13,11 @@ import { PostCardComponent } from './components/post-card/post-card.component';
 import { SelectedPostComponent } from './pages/selected-post/selected-post.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { PostFormPageComponent } from './pages/post-form-page/post-form-page.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,13 @@ import { environment } from 'src/environments/environment';
     PostListComponent,
     PostCardComponent,
     SelectedPostComponent,
+    PostFormPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
