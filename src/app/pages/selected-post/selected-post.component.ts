@@ -33,7 +33,6 @@ export class SelectedPostComponent implements OnInit {
   findPostById(): void {
     if (this.postId) {
       this.postsService.getPostById(this.postId).subscribe((post) => {
-        console.log(JSON.stringify(post, null, 4));
         this.post = post;
         this.isLoading = false;
       });

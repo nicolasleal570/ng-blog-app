@@ -13,6 +13,11 @@ const routes: Routes = [
     pathMatch: 'full',
     component: PostFormPageComponent,
   },
+  {
+    path: 'posts/:postId/update',
+    pathMatch: 'full',
+    component: PostFormPageComponent,
+  },
   { path: 'posts/:postId', component: SelectedPostComponent },
   { path: '**', redirectTo: '/' },
 ];

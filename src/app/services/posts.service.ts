@@ -51,7 +51,28 @@ export class PostsService {
       );
   }
 
+  /**
+   * CREATE NEW POST
+   * @param newPost
+   */
   createNewPost(newPost: Post): Promise<DocumentReference> {
     return this.postsCollection.add(newPost);
+  }
+
+  /**
+   * UPDATE POST BY ID
+   * @param postId
+   * @param postData
+   */
+  updatePost(postId: string, postData: Post): Promise<void> {
+    return this.postsCollection.doc<Post>(postId).update(postData);
+  }
+
+  /**
+   * DELETE POST BY ID
+   * @param postId
+   */
+  deletePost(postId: string): Promise<void> {
+    return this.postsCollection.doc<Post>(postId).delete();
   }
 }
