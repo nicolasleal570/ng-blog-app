@@ -18,6 +18,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { PostFormPageComponent } from './pages/post-form-page/post-form-page.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PostFormPageComponent } from './pages/post-form-page/post-form-page.com
     PostCardComponent,
     SelectedPostComponent,
     PostFormPageComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

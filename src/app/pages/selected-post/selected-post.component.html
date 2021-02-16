@@ -1,10 +1,17 @@
-<app-header
-  [isSmall]="true"
-  [title]="post.title"
-  [description]="post.summary"
-></app-header>
-<div class="post-body">
-  <div class="wrapper">
-    <p>{{ post.body }}</p>
+<app-loader *ngIf="isLoading; else contentReady"></app-loader>
+
+<ng-template #contentReady>
+  <app-header
+    [isSmall]="true"
+    [title]="post.title"
+    [description]="post.summary"
+  ></app-header>
+  <div class="post-body">
+    <div class="wrapper">
+      <a [routerLink]="['/posts', post.id, 'update']" class="update-post-btn"
+        >Update Post</a
+      >
+      <p>{{ post.body }}</p>
+    </div>
   </div>
-</div>
+</ng-template>

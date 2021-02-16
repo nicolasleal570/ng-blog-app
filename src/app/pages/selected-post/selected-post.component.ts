@@ -11,6 +11,8 @@ import { PostsService } from 'src/app/services/posts.service';
 export class SelectedPostComponent implements OnInit {
   postId: string = '';
   post: Post = null;
+  isLoading: boolean = true;
+
   constructor(
     private postsService: PostsService,
     private router: ActivatedRoute
@@ -30,7 +32,11 @@ export class SelectedPostComponent implements OnInit {
 
   findPostById(): void {
     if (this.postId) {
-      this.post = this.postsService.getPostById(this.postId);
+      this.postsService.getPostById(this.postId).subscribe((post) => {
+        console.log(JSON.stringify(post, null, 4));
+        this.post = post;
+        this.isLoading = false;
+      });
     }
   }
 }

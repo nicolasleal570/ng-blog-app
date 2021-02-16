@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Post } from 'src/app/models/post';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-post-form-page',
@@ -9,7 +12,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class PostFormPageComponent implements OnInit {
   postForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private postService: PostsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.buildForm();
@@ -26,19 +33,17 @@ export class PostFormPageComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('Enviando form');
-    const title = this.postForm.get('title').value;
-    const summary = this.postForm.get('summary').value;
-    const body = this.postForm.get('body').value;
-    const photo = this.postForm.get('photo').value;
-    const category = this.postForm.get('category').value;
+    const newPost: Post = {
+      title: this.postForm.get('title').value,
+      summary: this.postForm.get('summary').value,
+      body: this.postForm.get('body').value,
+      photo: this.postForm.get('photo').value,
+      category: this.postForm.get('category').value,
+    };
 
-    console.log({
-      title,
-      summary,
-      body,
-      photo,
-      category,
+    this.postService.createNewPost(newPost).then((response) => {
+      console.log('response', JSON.stringify(response, null, 4));
+      this.router.navigate(['/posts']);
     });
   }
 }

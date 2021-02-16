@@ -1,5 +1,18 @@
+@import "../../../styles/variables.scss";
+
 .post-body {
   padding: 100px 0;
+
+  .update-post-btn {
+    text-decoration: none;
+    font-family: inherit;
+    color: #fff;
+    display: inline-block;
+    background-color: $dark;
+    padding: 13px 30px;
+    border-radius: 5px;
+    margin-bottom: 45px;
+  }
 
   p {
     width: 60%;
