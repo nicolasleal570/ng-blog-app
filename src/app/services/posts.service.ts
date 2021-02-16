@@ -16,7 +16,9 @@ export class PostsService {
   private postsCollection: AngularFirestoreCollection<Post>;
 
   constructor(private firestore: AngularFirestore) {
-    this.postsCollection = this.firestore.collection<Post>('posts');
+    this.postsCollection = this.firestore.collection<Post>('posts', (ref) =>
+      ref.orderBy('title')
+    );
   }
 
   /**
