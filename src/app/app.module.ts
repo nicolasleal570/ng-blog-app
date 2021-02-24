@@ -19,6 +19,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { PostFormPageComponent } from './pages/post-form-page/post-form-page.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { AuthFormComponent } from './components/auth-form/auth-form.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     SelectedPostComponent,
     PostFormPageComponent,
     LoaderComponent,
+    LoginPageComponent,
+    SignUpPageComponent,
+    AuthFormComponent,
   ],
   imports: [
     BrowserModule,

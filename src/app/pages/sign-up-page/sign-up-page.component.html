@@ -1,0 +1,5 @@
+<app-header [isSmall]="true" title="Create an account"></app-header>
+<app-auth-form
+  (sendFormEvent)="onHandleSignUp($event)"
+  [isRegister]="true"
+></app-auth-form>

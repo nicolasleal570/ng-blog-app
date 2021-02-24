@@ -1,0 +1,25 @@
+.auth-form {
+  padding: 100px 0;
+}
+
+.buttons {
+  margin-top: 20px;
+
+  > button {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: #fff;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}

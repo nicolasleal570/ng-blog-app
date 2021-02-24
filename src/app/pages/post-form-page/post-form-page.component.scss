@@ -2,41 +2,4 @@
 
 .post-form {
   padding: 100px 0;
-
-  .form-container {
-    background: $light;
-    width: 35%;
-    margin: 0 auto;
-    padding: 16px;
-    border-radius: 5px;
-
-    .input-container {
-      margin-bottom: 20px;
-
-      label {
-        display: inline-block;
-        margin-bottom: 10px;
-      }
-    }
-
-    .btn-create,
-    .btn-delete {
-      border: none;
-      outline: none;
-      color: #fff;
-      background-color: $dark;
-      border: 2px solid $dark;
-      padding: 13px 30px;
-      border-radius: 5px;
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    .btn-delete {
-      background: none;
-      border: 2px solid $accent;
-      color: $accent;
-      margin-right: 10px;
-    }
-  }
 }

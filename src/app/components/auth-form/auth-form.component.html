@@ -1,0 +1,49 @@
+<div class="auth-form">
+  <div class="wrapper">
+    <form [formGroup]="authForm" class="form-container" (ngSubmit)="onSubmit()">
+      <!-- DISPLAY NAME INPUT -->
+      <div class="input-container" *ngIf="isRegister">
+        <label for="displayName">Enter Your Name:</label>
+        <input
+          type="text"
+          id="displayName"
+          placeholder="John Doe"
+          formControlName="displayName"
+        />
+      </div>
+
+      <!-- EMAIL INPUT -->
+      <div class="input-container">
+        <label for="email">Enter Your Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="john@example.com"
+          formControlName="email"
+        />
+      </div>
+
+      <!-- PASSWORD INPUT -->
+      <div class="input-container">
+        <label for="password">Enter Your Password:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="**********"
+          formControlName="password"
+        />
+      </div>
+
+      <button type="submit" class="btn-create">Send</button>
+    </form>
+
+    <div class="form-container buttons">
+      <button type="button" (click)="googleLogin()">
+        <img
+          src="http://1000marcas.net/wp-content/uploads/2019/11/Google-Logo.png"
+          alt="Google Logo"
+        />
+      </button>
+    </div>
+  </div>
+</div>

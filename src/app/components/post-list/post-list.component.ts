@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
+import { AuthService } from 'src/app/services/auth.service';
 import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
@@ -8,11 +9,23 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./post-list.component.scss'],
 })
 export class PostListComponent implements OnInit {
-  posts: Array<Post> = [];
-  constructor(private postsService: PostsService) {}
+  @Input() posts: Array<Post> = [];
+  isAuthenticated: boolean = false;
+  constructor(
+    private postsService: PostsService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.getAllPosts();
+
+    this.authService.getCurrentUser().subscribe((user) => {
+      if (user) {
+        this.isAuthenticated = true;
+      } else {
+        this.isAuthenticated = false;
+      }
+    });
   }
 
   getAllPosts(): void {

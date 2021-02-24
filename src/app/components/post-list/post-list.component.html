@@ -1,5 +1,8 @@
 <div class="wrapper">
-  <a [routerLink]="['/posts', 'create']" class="btn-create-post"
+  <a
+    [routerLink]="['/posts', 'create']"
+    class="btn-create-post"
+    *ngIf="isAuthenticated"
     >Create your own post</a
   >
 </div>
